@@ -1,6 +1,8 @@
 body {
     text-align: center;
     background-image: url('http://m.uthpik.com/web/upload/NNEditor/20210429/EBA79DED959CEAB3A0EC9691EC9DB4_PC_16.10_1.jpg');
+    width: auto;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     margin-left: 200px; ;
