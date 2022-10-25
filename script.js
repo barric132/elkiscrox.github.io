@@ -94,7 +94,7 @@ const setting = (hori, verti) => {
             successCards.push(cardArray[0]);
             successCards.push(cardArray[1]);
             cardArray = [];
-               if(counntt === 1 || counntt === 5 || counntt === 9 || counntt === 13){
+               if(counntt === 1 || counntt === 5 || counntt === 9 || counntt === 13 || counntt === 17){
                     p1Score++;
                     p1Show.textContent=p1Score;
                       if(p1Score === winningScore){
@@ -104,7 +104,7 @@ const setting = (hori, verti) => {
                         }
                 }
               
-               if(counntt === 2 || counntt === 6 || counntt === 10 || counntt === 14){
+               if(counntt === 2 || counntt === 6 || counntt === 10 || counntt === 14 || counntt === 18){
                     p2Score++;
                     p2Show.textContent=p2Score;
                        if(p2Score === winningScore){
@@ -114,7 +114,7 @@ const setting = (hori, verti) => {
                          }
                 }
 
-               if(counntt === 3 || counntt === 7 || counntt === 11 || counntt === 15){
+               if(counntt === 3 || counntt === 7 || counntt === 11 || counntt === 15 || counntt === 19){
                      p3Score++;
                      p3Show.textContent=p3Score;
                         if(p3Score === winningScore){
@@ -124,7 +124,7 @@ const setting = (hori, verti) => {
                          }
                   }
 
-               if(counntt === 4 || counntt === 8 || counntt === 12 || counntt === 16){
+               if(counntt === 4 || counntt === 8 || counntt === 12 || counntt === 16 || counntt === 20){
                       p4Score++;
                       p4Show.textContent=p4Score;
                          if(p4Score === winningScore){
@@ -135,9 +135,9 @@ const setting = (hori, verti) => {
                     }
               gihoe++;
               count.textContent=gihoe;
-                if(counntt === 17)
-                alert("게임이 너무 길어 재시작합니다.");
-                    window.location.reload;
+                if(counntt === 21){
+                  window.location.reload();
+                }
 
 
             if (successCards.length == 32) {
