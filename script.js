@@ -100,6 +100,7 @@ const setting = (hori, verti) => {
                       if(p1Score === winningScore){
                           gameOver=true;
                           alert("1팀 우승!!");
+                          clickFlag = false;
                         }
                 }
               
@@ -109,6 +110,7 @@ const setting = (hori, verti) => {
                        if(p2Score === winningScore){
                            gameOver=true;
                           alert("2팀 우승!!");
+                          clickFlag = false;
                          }
                 }
 
@@ -118,6 +120,7 @@ const setting = (hori, verti) => {
                         if(p3Score === winningScore){
                           gameOver=true;
                           alert("3팀 우승!!");
+                          clickFlag = false;
                          }
                   }
 
@@ -127,6 +130,7 @@ const setting = (hori, verti) => {
                          if(p4Score === winningScore){
                             gameOver=true;
                             alert("4팀 우승!!");
+                            clickFlag = false;
                            }
                     }
               gihoe++;
@@ -150,6 +154,7 @@ const setting = (hori, verti) => {
           }
           else {
             clickFlag = false;
+
 
             setTimeout(() => {
               cardArray[0].classList.remove("flipped");
