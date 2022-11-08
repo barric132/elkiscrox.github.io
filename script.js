@@ -133,14 +133,9 @@ const setting = (hori, verti) => {
 
 
             if (successCards.length == 24) {
-              alert( Math.min(p1Score, p2Score, p3Score, p4Score)); + "점인 팀이 우승!");
-              container.innerHTML = "";
-              successCards = [];
-              color = [];
-              colorSelect = colorArray.slice();
-              gameStart = null;
-              shuffle();
-              setting(horizontal, vertical);
+              alert(Math.max(p1Score, p2Score, p3Score, p4Score) + "점인 팀이 우승!!");
+              alert(Math.min(p1Score, p2Score, p3Score, p4Score) + "점인 팀이 꼴찌!")
+              clickFlag = false;
             }
           }
           else {
