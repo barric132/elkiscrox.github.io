@@ -29,6 +29,7 @@ const colorArray = [
 
 ];
 let counntt = 1;
+let turnn = 0;
 let colorSelect = colorArray.slice();
 let color = [];
 let successCards = [];
@@ -151,6 +152,8 @@ const setting = (hori, verti) => {
                   alert("기회를 모두 소진하였습니다. 다음팀 차례입니다.");
                   gihoe = 2;
                   counntt++;
+                  turnn++;
+                  console.log(turnn + "번째 턴");
                 }
               count.textContent = gihoe;
             }, 1000);
