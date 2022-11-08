@@ -13,7 +13,7 @@ var p1Score=0;
 var p2Score=0;
 var p3Score=0;
 var p4Score=0;
-var winningScore=7;
+var winningScore=5;
  
 restartbtn.addEventListener("click", function(){
     restart();

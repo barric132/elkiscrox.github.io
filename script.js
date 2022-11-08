@@ -1,4 +1,4 @@
-const horizontal = 8;
+const horizontal = 6;
 const vertical = 4;
 const container = document.querySelector(".container");
 const colorArray = [
@@ -26,14 +26,6 @@ const colorArray = [
   "brown",
   "khaki",
   "khaki",
-  "gray",
-  "gray",
-  "coral",
-  "coral",
-  "#8000FF",
-  "#8000FF",
-  "#0B4C5F",
-  "#0B4C5F",
 
 ];
 let counntt = 1;
@@ -90,7 +82,7 @@ const setting = (hori, verti) => {
             cardArray[0].querySelector(".card-back").style.backgroundColor;
           let cardB =
             cardArray[1].querySelector(".card-back").style.backgroundColor;
-          if (cardA == cardB) {
+          if (cardA == cardB && cardArray[0] !== cardArray[1]) {
             successCards.push(cardArray[0]);
             successCards.push(cardArray[1]);
             cardArray = [];
@@ -140,7 +132,7 @@ const setting = (hori, verti) => {
                 }
 
 
-            if (successCards.length == 32) {
+            if (successCards.length == 24) {
               const array = [p1Score, p2Score, p3Score, p4Score];
               alert("우승자는" + Math.max(array));
               container.innerHTML = "";
@@ -154,8 +146,7 @@ const setting = (hori, verti) => {
           }
           else {
             clickFlag = false;
-
-
+            
             setTimeout(() => {
               cardArray[0].classList.remove("flipped");
               cardArray[1].classList.remove("flipped");
