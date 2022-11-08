@@ -10,6 +10,7 @@
   height: 130px;
   margin: 0 auto;
   perspective: 140px;
+  border-radius: 3px;
 }
 .card-inner {
   position: relative;
