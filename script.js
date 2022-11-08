@@ -67,7 +67,7 @@ const setting = (hori, verti) => {
   Cards.forEach((aCard, _) => {
     setTimeout(() => {
       aCard.classList.remove("flipped");
-    }, 7000);
+    }, 5000);
   });
   setTimeout(() => {
     clickFlag = true;
