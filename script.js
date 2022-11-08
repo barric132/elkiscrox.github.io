@@ -133,8 +133,7 @@ const setting = (hori, verti) => {
 
 
             if (successCards.length == 24) {
-              const array = [p1Score, p2Score, p3Score, p4Score];
-              alert( Math.min(array) + "점인 팀이 우승!");
+              alert( Math.min(p1Score, p2Score, p3Score, p4Score)); + "점인 팀이 우승!");
               container.innerHTML = "";
               successCards = [];
               color = [];
