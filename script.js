@@ -154,8 +154,7 @@ const setting = (hori, verti) => {
               cardArray = [];
               gihoe--;
                 if (gihoe === 0){
-                  alert("기회를 모두 소진하였습니다.");
-                  alert("다음팀 차례입니다.");
+                  alert("기회를 모두 소진하였습니다. 다음팀 차례입니다.");
                   gihoe = 2;
                   counntt++;
                 }
