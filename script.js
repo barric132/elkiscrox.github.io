@@ -126,7 +126,7 @@ const setting = (hori, verti) => {
                             clickFlag = false;
                            }
                     }
-                if(counntt === 21){
+               if(counntt === 21){
                   window.location.reload();
                 }
 
