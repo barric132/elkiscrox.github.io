@@ -8,7 +8,7 @@ var restartbtn=document.getElementById("restart");
 var p=document.querySelector("p");
 var winningScoreShow=document.querySelector("p span");
  
-var gihoe=2;
+var gihoe=1;
 var p1Score=0;
 var p2Score=0;
 var p3Score=0;
