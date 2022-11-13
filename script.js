@@ -126,8 +126,6 @@ const setting = (hori, verti) => {
                             clickFlag = false;
                            }
                     }
-              gihoe++;
-              count.textContent=gihoe;
                 if(counntt === 21){
                   window.location.reload();
                 }
@@ -150,7 +148,7 @@ const setting = (hori, verti) => {
               gihoe--;
                 if (gihoe === 0){
                   alert("기회를 모두 소진하였습니다. 다음팀 차례입니다.");
-                  gihoe = 2;
+                  gihoe = 1;
                   counntt++;
                   turnn++;
                   console.log(turnn + "번째 턴");
