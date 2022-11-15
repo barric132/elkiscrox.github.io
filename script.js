@@ -1,6 +1,8 @@
 const horizontal = 6;
 const vertical = 4;
 const container = document.querySelector(".container");
+const btn_paly = document.querySelector("#btn_play");
+const arr_sound = [];
 const colorArray = [
   "red",
   "red",
@@ -26,7 +28,6 @@ const colorArray = [
   "brown",
   "khaki",
   "khaki",
-
 ];
 let counntt = 1;
 let turnn = 0;
@@ -34,6 +35,8 @@ let colorSelect = colorArray.slice();
 let color = [];
 let successCards = [];
 let gameStart;
+const audio = new Audio("timo.mp3");
+const aaudio = new Audio("bad.mp3");
 const shuffle = () => {
   for (let i = 0; colorSelect.length > 0; i++) {
     color = color.concat(
@@ -57,6 +60,29 @@ const setting = (hori, verti) => {
     cardInner.appendChild(cardBack);
     cardBack.style.backgroundColor = color[i];
   }
+
+  for (let i = 0; i < 2; i++) {
+    const sound = new Audio();
+    sound.src = "god.mp3";
+    sound.addEventListener("ended", function () {
+      if (window.chrome) {
+        this.load();
+      }
+      this.pause();
+    });
+
+    arr_sound.push(sound);
+  }
+
+  document.getElementById("btn_play").onclick = function () {
+    for (let i = 0; i < arr_sound.length; i++) {
+      if (arr_sound[i].paused) {
+        arr_sound[i].play();
+        break;
+      }
+    }
+  };
+
   const Cards = document.querySelectorAll(".card");
   let clickFlag = false;
   let cardArray = [];
@@ -87,72 +113,101 @@ const setting = (hori, verti) => {
             successCards.push(cardArray[0]);
             successCards.push(cardArray[1]);
             cardArray = [];
-               if(counntt === 1 || counntt === 5 || counntt === 9 || counntt === 13 || counntt === 17){
-                    p1Score++;
-                    p1Show.textContent=p1Score;
-                      if(p1Score === winningScore){
-                          gameOver=true;
-                          alert("1팀 우승!!");
-                          clickFlag = false;
-                        }
-                }
-              
-               if(counntt === 2 || counntt === 6 || counntt === 10 || counntt === 14 || counntt === 18){
-                    p2Score++;
-                    p2Show.textContent=p2Score;
-                       if(p2Score === winningScore){
-                           gameOver=true;
-                          alert("2팀 우승!!");
-                          clickFlag = false;
-                         }
-                }
+            audio.play();
+            if (
+              counntt === 1 ||
+              counntt === 5 ||
+              counntt === 9 ||
+              counntt === 13 ||
+              counntt === 17
+            ) {
+              p1Score++;
+              p1Show.textContent = p1Score;
+              if (p1Score === winningScore) {
+                gameOver = true;
+                alert("1팀 우승!!");
+                clickFlag = false;
+              }
+            }
 
-               if(counntt === 3 || counntt === 7 || counntt === 11 || counntt === 15 || counntt === 19){
-                     p3Score++;
-                     p3Show.textContent=p3Score;
-                        if(p3Score === winningScore){
-                          gameOver=true;
-                          alert("3팀 우승!!");
-                          clickFlag = false;
-                         }
-                  }
+            if (
+              counntt === 2 ||
+              counntt === 6 ||
+              counntt === 10 ||
+              counntt === 14 ||
+              counntt === 18
+            ) {
+              p2Score++;
+              p2Show.textContent = p2Score;
+              if (p2Score === winningScore) {
+                gameOver = true;
+                alert("2팀 우승!!");
+                clickFlag = false;
+              }
+            }
 
-               if(counntt === 4 || counntt === 8 || counntt === 12 || counntt === 16 || counntt === 20){
-                      p4Score++;
-                      p4Show.textContent=p4Score;
-                         if(p4Score === winningScore){
-                            gameOver=true;
-                            alert("4팀 우승!!");
-                            clickFlag = false;
-                           }
-                    }
-               if(counntt === 21){
-                  window.location.reload();
-                }
+            if (
+              counntt === 3 ||
+              counntt === 7 ||
+              counntt === 11 ||
+              counntt === 15 ||
+              counntt === 19
+            ) {
+              p3Score++;
+              p3Show.textContent = p3Score;
+              if (p3Score === winningScore) {
+                gameOver = true;
+                alert("3팀 우승!!");
+                clickFlag = false;
+              }
+            }
 
+            if (
+              counntt === 4 ||
+              counntt === 8 ||
+              counntt === 12 ||
+              counntt === 16 ||
+              counntt === 20
+            ) {
+              p4Score++;
+              p4Show.textContent = p4Score;
+              if (p4Score === winningScore) {
+                gameOver = true;
+                alert("4팀 우승!!");
+                clickFlag = false;
+              }
+            }
+            if (counntt === 21) {
+              window.location.reload();
+            }
 
             if (successCards.length == 24) {
-              alert(Math.max(p1Score, p2Score, p3Score, p4Score) + "점인 팀이 우승!!");
-              alert(Math.min(p1Score, p2Score, p3Score, p4Score) + "점인 팀이 꼴찌!")
+              alert(
+                Math.max(p1Score, p2Score, p3Score, p4Score) +
+                  "점인 팀이 우승!!"
+              );
+              alert(
+                Math.min(p1Score, p2Score, p3Score, p4Score) + "점인 팀이 꼴찌!"
+              );
               clickFlag = false;
             }
-          }
-          else {
+          } else {
             clickFlag = false;
-            
+
             setTimeout(() => {
               cardArray[0].classList.remove("flipped");
               cardArray[1].classList.remove("flipped");
               clickFlag = true;
+              aaudio.play();
               cardArray = [];
               gihoe--;
-                if (gihoe === 0){
-                  alert("기회를 모두 소진하였습니다. 다음팀 차례입니다.");
-                  gihoe = 1;
-                  counntt++;
-                  turnn++;
-                  console.log(turnn + "번째 턴");
-                }
+              if (gihoe === 0) {
+                alert("기회를 모두 소진하였습니다. 다음팀 차례입니다.");
+                gihoe = 1;
+                counntt++;
+                turnn++;
+                console.log(turnn + "번쨰 턴");
+              }
               count.textContent = gihoe;
             }, 1000);
           }
