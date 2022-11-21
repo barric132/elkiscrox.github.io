@@ -61,19 +61,6 @@ const setting = (hori, verti) => {
     cardBack.style.backgroundColor = color[i];
   }
 
-  for (let i = 0; i < 2; i++) {
-    const sound = new Audio();
-    sound.src = "god.mp3";
-    sound.addEventListener("ended", function () {
-      if (window.chrome) {
-        this.load();
-      }
-      this.pause();
-    });
-
-    arr_sound.push(sound);
-  }
-
   document.getElementById("btn_play").onclick = function () {
     for (let i = 0; i < arr_sound.length; i++) {
       if (arr_sound[i].paused) {
@@ -212,6 +199,18 @@ const setting = (hori, verti) => {
             }, 1000);
           }
         }
+      }
+      for (let i = 0; i < 2; i++) {
+        const sound = new Audio();
+        sound.src = "god.mp3";
+        sound.addEventListener("ended", function () {
+          if (window.chrome) {
+            this.load();
+          }
+          this.pause();
+        });
+
+        arr_sound.push(sound);
       }
     });
   });
