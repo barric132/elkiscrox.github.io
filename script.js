@@ -70,6 +70,19 @@ const setting = (hori, verti) => {
     }
   };
 
+  for (let i = 0; i < 2; i++) {
+    const sound = new Audio();
+    sound.src = "god.mp3";
+    sound.addEventListener("ended", function () {
+      if (window.chrome) {
+        this.load();
+      }
+      this.pause();
+    });
+
+    arr_sound.push(sound);
+  }
+
   const Cards = document.querySelectorAll(".card");
   let clickFlag = false;
   let cardArray = [];
@@ -199,18 +212,6 @@ const setting = (hori, verti) => {
             }, 1000);
           }
         }
-      }
-      for (let i = 0; i < 2; i++) {
-        const sound = new Audio();
-        sound.src = "god.mp3";
-        sound.addEventListener("ended", function () {
-          if (window.chrome) {
-            this.load();
-          }
-          this.pause();
-        });
-
-        arr_sound.push(sound);
       }
     });
   });
