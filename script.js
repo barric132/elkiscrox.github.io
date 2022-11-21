@@ -35,8 +35,8 @@ let colorSelect = colorArray.slice();
 let color = [];
 let successCards = [];
 let gameStart;
-const audio = new Audio("timo.mp3");
-const aaudio = new Audio("bad.mp3");
+const audio = new Audio("sound/timo.mp3");
+const aaudio = new Audio("sound/bad.mp3");
 const shuffle = () => {
   for (let i = 0; colorSelect.length > 0; i++) {
     color = color.concat(
@@ -202,7 +202,7 @@ const setting = (hori, verti) => {
       }
       for (let i = 0; i < 2; i++) {
         const sound = new Audio();
-        sound.src = "god.mp3";
+        sound.src = "sound/god.mp3";
         sound.addEventListener("ended", function () {
           if (window.chrome) {
             this.load();
