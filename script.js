@@ -207,6 +207,8 @@ const setting = (hori, verti) => {
                 counntt++;
                 turnn++;
                 console.log(turnn + "번쨰 턴");
+                console.log(cardArray);
+                console.log(successCards);
               }
               count.textContent = gihoe;
             }, 1000);
